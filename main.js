@@ -1,6 +1,16 @@
 const container = document.querySelector(".container");
 const button = document.querySelector("button");
 
+let defaultSize = 256;
+for (let i = 0; i < defaultSize; i++) {
+    const grid = document.createElement('div');
+    grid.classList.add('grid');
+    grid.style.width = "20px";
+    grid.style.height = "20px";
+    container.appendChild(grid);
+};
+changeSquareColor();
+
 button.addEventListener('click', () => {
     container.innerHTML = "";
     let gridSize = prompt('Please enter the grid size (Maximum is 100)');
